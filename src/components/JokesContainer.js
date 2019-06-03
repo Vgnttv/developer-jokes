@@ -1,76 +1,69 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getJokes } from "../actions/jokes";
-import { Animated } from "react-animated-css";
-import LoadingModal from "./LoadingModal"
+import Jokes from "./Jokes";
+import Punchlines from "./Punchlines";
+import LoadingModal from "./LoadingModal";
 import "./JokesContainer.css";
 
 class JokesContainer extends Component {
   componentDidMount() {
     this.props.getJokes();
   }
-  renderJoke = joke => {
-    return (
-      <div className="Jokes" key={joke.id}>
-        <h1>{joke.setup}</h1>
-      </div>
-    );
-  };
 
-  renderPunchline = joke => {
-    return (
-      <div className="Jokes" key={joke.punchline}>
-        <h2>{joke.punchline}</h2>
-      </div>
-    );
-  };
+  // renderPunchline = joke => {
+  //   return (
+  //     <div className="Jokes" key={joke.punchline}>
+  //       <h2>{joke.punchline}</h2>
+  //     </div>
+  //   );
+  // };
   onSubmit = () => {
     window.location.reload();
   };
-
   render() {
-    const { jokes } = this.props;
-    console.log("this.props", this.props);
+    console.log("jokes", this.props.jokes);
+    // const { jokes } = this.props;
 
     return (
       <div>
-      {this.props.loading ? (
-        <LoadingModal />
-      ) : (
-      <div className="JokesContainer">
-        <div className="Joke">
-          {jokes && (
-            <Animated
-              animationIn="bounceInLeft"
-              animationOut="fadeOut"
-              isVisible={true}
-            >
-              <div>{jokes && jokes.map(joke => this.renderJoke(joke))}</div>
-            </Animated>
-          )}
-        </div>
-        <div className="Punchline">
-          {jokes && (
-            <Animated
-              animationIn="bounceInRight"
-              animationOut="fadeOut"
-              animationInDelay="2000"
-              isVisible={true}
-            >
-              <div>
-                {jokes && jokes.map(joke => this.renderPunchline(joke))}
-              </div>
-            </Animated>
-          )}
-          <button value="refresh" onClick={this.onSubmit}>
-            More LOLs?
-          </button>
-        </div>
+        {this.props.loading ? (
+          <LoadingModal />
+        ) : (
+          <div className="JokesContainer">
+            <h1>Developers will get it...</h1>
+
+            {this.props.jokes &&
+              this.props.jokes.length &&
+              this.props.jokes.map(joke => {
+                return (
+                  <div key={joke.id} className="Joke">
+                    <Jokes jokes={joke} />
+                  </div>
+                );
+              })}
+
+            {this.props.jokes &&
+              this.props.jokes.length &&
+              this.props.jokes.map(joke => {
+                return (
+                  <div key={joke.id} className="Punchline">
+                    <Punchlines joke={joke} />
+                  </div>
+                );
+              })}
+            <img
+              src="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif"
+              alt="LOLOL"
+            />
+            <button value="refresh" onClick={this.onSubmit}>
+              More LOLs?
+            </button>
+          </div>
+        )}
       </div>
-    )
+    );
   }
-  </div>
-    )}
 }
 const mapStateToProps = state => ({
   jokes:

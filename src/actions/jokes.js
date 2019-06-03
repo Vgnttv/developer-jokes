@@ -16,7 +16,6 @@ export const getJokes = () => dispatch => {
   request
     .get(`${baseUrl}`)
     .then(result => {
-      console.log("result.body for jokes", result.body);
       dispatch(updateJokes(result.body));
     })
     .catch(err => console.error(err));
