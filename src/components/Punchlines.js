@@ -13,6 +13,15 @@ export default props => {
       >
         <div className="Jokes" key={props.joke.punchline}>
           <h2>{props.joke.punchline}</h2>
+        </div>
+      </Animated>
+      <Animated
+        animationIn="bounceInUp"
+        animationOut="fadeOut"
+        animationInDelay={3500}
+        isVisible={true}
+      >
+        <div className="Jokes" key={props.joke.punchline}>
           <img
             src="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif"
             alt="LOLOL"
