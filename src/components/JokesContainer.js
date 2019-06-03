@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getJokes } from "../actions/jokes";
 import { Animated } from "react-animated-css";
-
+import "./JokesContainer.css";
 class JokesContainer extends Component {
   componentDidMount() {
     this.props.getJokes();
@@ -22,12 +22,17 @@ class JokesContainer extends Component {
       </div>
     );
   };
+  onSubmit = () => {
+    window.location.reload();
+  };
+  
   render() {
     const { jokes } = this.props;
+    console.log("this.props", this.props);
 
     return (
-      <div className="EventDetailsContainer">
-        <div className="EventDetails">
+      <div className="JokesContainer">
+        <div className="Joke">
           {jokes && (
             <Animated
               animationIn="bounceInLeft"
@@ -51,6 +56,9 @@ class JokesContainer extends Component {
               </div>
             </Animated>
           )}
+          <button value="refresh" onClick={this.onSubmit}>
+            LOL
+          </button>
         </div>
       </div>
     );
