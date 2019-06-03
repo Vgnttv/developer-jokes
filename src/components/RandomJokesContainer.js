@@ -14,6 +14,7 @@ class RandomJokesContainer extends Component {
     this.props.getRandomJokes();
   };
   render() {
+      console.log('this.props', this.props)
     const { jokes } = this.props;
 
     return (
@@ -38,7 +39,7 @@ class RandomJokesContainer extends Component {
             <button value="refresh" onClick={this.onSubmit}>
               More?
             </button>
-            <Link to={`/`}>
+            <Link to={`/jokes`}>
               <button>Back</button>
             </Link>
           </div>
