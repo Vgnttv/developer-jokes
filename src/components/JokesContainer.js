@@ -11,19 +11,12 @@ class JokesContainer extends Component {
     this.props.getJokes();
   }
 
-  // renderPunchline = joke => {
-  //   return (
-  //     <div className="Jokes" key={joke.punchline}>
-  //       <h2>{joke.punchline}</h2>
-  //     </div>
-  //   );
-  // };
   onSubmit = () => {
-    window.location.reload();
+    this.props.getJokes();
   };
   render() {
     console.log("jokes", this.props.jokes);
-    // const { jokes } = this.props;
+    const { jokes } = this.props;
 
     return (
       <div>
@@ -33,9 +26,9 @@ class JokesContainer extends Component {
           <div className="JokesContainer">
             <h1>Developers will get it...</h1>
 
-            {this.props.jokes &&
-              this.props.jokes.length &&
-              this.props.jokes.map(joke => {
+            {jokes &&
+              jokes.length &&
+              jokes.map(joke => {
                 return (
                   <div key={joke.id} className="Joke">
                     <Jokes jokes={joke} />
@@ -43,9 +36,9 @@ class JokesContainer extends Component {
                 );
               })}
 
-            {this.props.jokes &&
-              this.props.jokes.length &&
-              this.props.jokes.map(joke => {
+            {jokes &&
+              jokes.length &&
+              jokes.map(joke => {
                 return (
                   <div key={joke.id} className="Punchline">
                     <Punchlines joke={joke} />
