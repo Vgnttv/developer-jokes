@@ -45,10 +45,10 @@ class JokesContainer extends Component {
                   </div>
                 );
               })}
-            <img
+            {/* <img
               src="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif"
               alt="LOLOL"
-            />
+            /> */}
             <button value="refresh" onClick={this.onSubmit}>
               More LOLs?
             </button>
