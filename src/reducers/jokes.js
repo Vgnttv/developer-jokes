@@ -1,13 +1,9 @@
 import {UPDATE_JOKES } from "../actions/jokes";
 
-export default (state = null, { type, payload }) => {
-  switch (type) {
-
+export default (state = null, action = {}) => {
+  switch (action.type) {
     case UPDATE_JOKES:
-      return payload.reduce((jokes, joke) => {
-        jokes[joke.id] = joke;
-        return jokes;
-      }, {});
+      return action.payload;
 
     default:
       return state;

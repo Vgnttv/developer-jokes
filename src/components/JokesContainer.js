@@ -4,7 +4,6 @@ import { getJokes } from "../actions/jokes";
 import { Link } from "react-router-dom";
 import Jokes from "./Jokes";
 import LoadingModal from "./LoadingModal";
-
 import "./JokesContainer.css";
 
 class JokesContainer extends Component {
