@@ -7,9 +7,23 @@ class JokesContainer extends Component {
   componentDidMount() {
     this.props.getJokes();
   }
+  renderJoke = joke => {
+    return (
+      <div className="Jokes" key={joke.id}>
+        <h1>{joke.setup}</h1>
+      </div>
+    );
+  };
+
+  renderPunchline = joke => {
+    return (
+      <div className="Jokes" key={joke.punchline}>
+        <h2>{joke.punchline}</h2>
+      </div>
+    );
+  };
   render() {
     const { jokes } = this.props;
-    console.log("this.props.jokes", this.props);
 
     return (
       <div className="EventDetailsContainer">
@@ -20,8 +34,21 @@ class JokesContainer extends Component {
               animationOut="fadeOut"
               isVisible={true}
             >
-              <h1>{jokes[0].setup}</h1>
-              <h2>{jokes[0].punchline}</h2>
+              <div>{jokes && jokes.map(joke => this.renderJoke(joke))}</div>
+            </Animated>
+          )}
+        </div>
+        <div className="Punchline">
+          {jokes && (
+            <Animated
+              animationIn="bounceInRight"
+              animationOut="fadeOut"
+              animationInDelay="2000"
+              isVisible={true}
+            >
+              <div>
+                {jokes && jokes.map(joke => this.renderPunchline(joke))}
+              </div>
             </Animated>
           )}
         </div>
