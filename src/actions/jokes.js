@@ -1,10 +1,9 @@
 import * as request from "superagent";
-import { baseUrl } from "../constants";
+import { baseUrl, randomJokesUrl } from "../constants";
 
-export const ADD_JOKE = "ADD_JOKE";
-export const UPDATE_JOKE = "UPDATE_JOKE";
+
 export const UPDATE_JOKES = "UPDATE_JOKES";
-export const UPDATE_JOKE_SUCCESS = "UPDATE_JOKE_SUCCESS";
+
 
 const updateJokes = jokes => ({
   type: UPDATE_JOKES,
@@ -20,3 +19,13 @@ export const getJokes = () => dispatch => {
     })
     .catch(err => console.error(err));
 };
+
+export const getRandomJokes = ()=> dispatch => {
+  request
+  .get (`${randomJokesUrl}`)
+  .then(result => {
+    dispatch(updateJokes(result.body));
+  })
+  .catch(err => console.error(err));
+
+}

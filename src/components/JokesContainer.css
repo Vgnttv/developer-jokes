@@ -2,16 +2,13 @@
   text-align: center;
   padding: 0.2rem;
   margin: 0;
-  height: 50rem;
+  height: 60rem;
   color: white;
-  background: radial-gradient(
-    /* rgba(101, 89, 222, 1) 37%,
-    rgba(113, 88, 213, 1) 44%,
-    rgba(137, 85, 195, 1) 56%, */
-    rgba(142, 84, 191, 1) 67%,
-    rgba(158, 82, 179, 1) 76%,
-    rgba(191, 78, 154, 1) 99%,
-    rgba(252, 70, 107, 1) 91%
+  background: linear-gradient(
+    90deg,
+    rgba(158, 82, 179, 1) 13%,
+    rgba(191, 78, 154, 1) 35%,
+    rgba(252, 70, 107, 1) 70%
   );
   font-family: "Roboto", sans-serif;
 }
@@ -33,14 +30,13 @@ h1 {
   font-size: 2.8em;
 }
 img {
-  /* position: absolute; */
   right: 40%;
-  /* bottom: 7rem; */
   border-radius: 20em;
 }
 button {
   display: inline-block;
   padding: 10px 27.5px;
+  margin: 1em;
   font-size: 0.8em;
   font-weight: 500;
   text-decoration: none;
@@ -49,7 +45,7 @@ button {
   transition: background-color 0.2s, border 0.2s, color 0.2s;
   border: 1px solid #fff;
   color: #fff;
-  position: absolute;
+  /* position: absolute; */
   right: 45%;
   bottom: 3rem;
 }

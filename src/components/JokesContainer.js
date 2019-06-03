@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getJokes } from "../actions/jokes";
+import { Link } from "react-router-dom";
 import Jokes from "./Jokes";
 import Punchlines from "./Punchlines";
 import LoadingModal from "./LoadingModal";
+
 import "./JokesContainer.css";
 
 class JokesContainer extends Component {
@@ -45,13 +47,14 @@ class JokesContainer extends Component {
                   </div>
                 );
               })}
-            {/* <img
-              src="https://media.giphy.com/media/wWue0rCDOphOE/giphy.gif"
-              alt="LOLOL"
-            /> */}
             <button value="refresh" onClick={this.onSubmit}>
               More LOLs?
             </button>
+            <Link to={`/randomjokes`}>
+              <button >
+              Get 10 random ones
+              </button>
+            </Link>
           </div>
         )}
       </div>
