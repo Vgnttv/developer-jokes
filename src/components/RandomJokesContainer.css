@@ -1,49 +1,51 @@
 .RandomJokesContainer {
-    font-family: "Roboto", sans-serif;
-    text-align: center;
-    padding-top: 0.2rem;
-    margin: 0;
-    height: 60rem;
-    color: white;
-    background: linear-gradient(
-      90deg,
-      rgba(158, 82, 179, 1) 13%,
-      rgba(191, 78, 154, 1) 35%,
-      rgba(252, 70, 107, 1) 70%
-    );
-  }
-  
-  .RandomJokes {
-    margin: 0;
-    text-align: center;
-    font-weight: 300;
-    font-size: 1em;
-  }
-  h1 {
-    color: purple;
-    font-weight: 300;
-    font-size: 2.5em;
-  }
- 
-  button {
-    display: inline-block;
-    padding: 10px 27.5px;
-    margin: 1em;
-    font-size: 0.8em;
-    font-weight: 500;
-    text-decoration: none;
-    background-color: transparent;
-    border-radius: 200px;
-    transition: background-color 0.2s, border 0.2s, color 0.2s;
-    border: 1px solid #fff;
-    color: #fff;
-    right: 45%;
-    bottom: 3rem;
-  }
-  
-  button:hover {
-    background: purple;
-    border: 1px solid white;
-    color: #fff;
-  }
-  
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  padding-top: 0.2rem;
+  margin: 0;
+  height: 60rem;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(158, 82, 179, 1) 13%,
+    rgba(191, 78, 154, 1) 35%,
+    rgba(252, 70, 107, 1) 70%
+  );
+}
+
+.RandomJokes {
+  margin: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1em;
+}
+h1 {
+  color: purple;
+  font-weight: 300;
+  font-size: 2.5em;
+}
+h3 {
+  font-weight: 300;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 27.5px;
+  margin: 1em;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 200px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+  border: 1px solid #fff;
+  color: #fff;
+  right: 45%;
+  bottom: 3rem;
+}
+
+button:hover {
+  background: purple;
+  border: 1px solid white;
+  color: #fff;
+}

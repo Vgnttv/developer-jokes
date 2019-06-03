@@ -10,7 +10,7 @@
     rgba(191, 78, 154, 1) 35%,
     rgba(252, 70, 107, 1) 70%
   );
-  font-family: "Roboto", sans-serif;
+  
 }
 
 .Joke {
@@ -28,6 +28,9 @@ h1 {
   font-weight: 300;
   padding: 1em;
   font-size: 2.8em;
+}
+h2 {
+  font-weight: 300;
 }
 img {
   right: 40%;

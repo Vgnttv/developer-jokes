@@ -23,7 +23,7 @@ class RandomJokesContainer extends Component {
           <LoadingModal />
         ) : (
           <div className="RandomJokesContainer">
-            <h1>A bunch</h1>
+            <h1>A bunch of LOL opportunities</h1>
 
             {jokes &&
               jokes.length &&

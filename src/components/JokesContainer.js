@@ -40,7 +40,7 @@ class JokesContainer extends Component {
                   More LOLs?
                 </button>
                 <Link to={`/randomjokes`}>
-                  <button>Get some random jokes</button>
+                  <button>Random LOLs</button>
                 </Link>
               </div>
             )}
