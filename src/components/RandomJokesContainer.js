@@ -35,12 +35,12 @@ class RandomJokesContainer extends Component {
                   </div>
                 );
               })}
-        <button value="refresh" onClick={this.onSubmit}>
-          More?
-        </button>
-        <Link to={`/`}>
-          <button>Back</button>
-        </Link>
+            <button value="refresh" onClick={this.onSubmit}>
+              More?
+            </button>
+            <Link to={`/`}>
+              <button>Back</button>
+            </Link>
           </div>
         )}
       </div>
@@ -51,7 +51,8 @@ const mapStateToProps = state => ({
   jokes:
     state.jokes === null
       ? null
-      : Object.values(state.jokes).sort((a, b) => b.id - a.id)
+      : Object.values(state.jokes).sort((a, b) => b.id - a.id),
+  loading: state.appStatus.loading
 });
 
 export default connect(

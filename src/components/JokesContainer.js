@@ -9,15 +9,14 @@ import LoadingModal from "./LoadingModal";
 import "./JokesContainer.css";
 
 class JokesContainer extends Component {
-  componentDidMount() {
-    this.props.getJokes();
-  }
+  // componentDidMount() {
+  //   this.props.getJokes();
+  // }
 
   onSubmit = () => {
     this.props.getJokes();
   };
   render() {
-    console.log("jokes", this.props.jokes);
     const { jokes } = this.props;
 
     return (
@@ -27,6 +26,11 @@ class JokesContainer extends Component {
         ) : (
           <div className="JokesContainer">
             <h1>Developers will get it...</h1>
+            {!jokes && (
+              <button value="refresh" onClick={this.onSubmit}>
+             Wanna laugh?
+            </button>
+            )}
 
             {jokes &&
               jokes.length &&
@@ -47,14 +51,16 @@ class JokesContainer extends Component {
                   </div>
                 );
               })}
-            <button value="refresh" onClick={this.onSubmit}>
-              More LOLs?
-            </button>
-            <Link to={`/randomjokes`}>
-              <button >
-              Get 10 random ones
-              </button>
-            </Link>
+            {jokes && jokes.length && (
+              <div>
+                <button value="refresh" onClick={this.onSubmit}>
+                  More LOLs?
+                </button>
+                <Link to={`/randomjokes`}>
+                  <button>Get some random jokes</button>
+                </Link>
+              </div>
+            )}
           </div>
         )}
       </div>
