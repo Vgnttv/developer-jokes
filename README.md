@@ -1,6 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Developers Jokes
 
-## Available Scripts
+## [🤣Check out the deployed version here!🤣](https://developer-jokes.netlify.com)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
