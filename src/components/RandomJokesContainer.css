@@ -3,14 +3,7 @@
   text-align: center;
   padding-top: 0.2rem;
   margin: 0;
-  height: 60rem;
   color: white;
-  background: linear-gradient(
-    90deg,
-    rgba(158, 82, 179, 1) 13%,
-    rgba(191, 78, 154, 1) 35%,
-    rgba(252, 70, 107, 1) 70%
-  );
 }
 
 .RandomJokes {
